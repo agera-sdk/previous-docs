@@ -65,10 +65,10 @@ let mut app_ftl = crate::app_ftl::create();
 if !app_ftl.load(None).await {
     return;
 }
-println!("{}", app_ftl.get_message_string("hello-world", None, &mut vec![]).unwrap());
+println!("{}", app_ftl.get_message("hello-world", None, &mut vec![]).unwrap());
 ```
 
-Meaning of the arguments to `app_ftl.get_message_string`:
+Meaning of the arguments to `app_ftl.get_message`:
 
 - The first argument is the message identifier.
 - The second argument is an optional arguments map, which is `None` in this case.
