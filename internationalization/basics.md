@@ -76,9 +76,9 @@ Meaning of the arguments to `app_ftl.get_message_string`:
 
 ## Arguments
 
-Arguments maps can be literally created with the `arguments!` macro:
+Arguments maps for `app_ftl.get_message_string` can be literally created with the `arguments!` macro:
 
-```
+```rust
 use rialight::intl;
 let arguments = intl::ftl::arguments!{ "x" => "y" };
 ```
