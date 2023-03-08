@@ -61,7 +61,7 @@ hello-world = Hello, world!
 The following code creates a `Ftl` using the above `create()` function, attempts to load the default locale, `"en"`, and prints `"Hello, world!"` to the console:
 
 ```rust
-let mut app_ftl = crate::app_ftl::create();
+let app_ftl = crate::app_ftl::create();
 if !app_ftl.load(None).await {
     return;
 }
