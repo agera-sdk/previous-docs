@@ -62,7 +62,7 @@ The following code creates a `Ftl` using the above `create()` function, attempts
 
 ```rust
 let mut app_ftl = crate::app_ftl::create();
-if !app_ftl.mutable().load(None).await {
+if !app_ftl.load(None).await {
     return;
 }
 println!("{}", app_ftl.get_message_string("hello-world", None, &mut vec![]).unwrap());
