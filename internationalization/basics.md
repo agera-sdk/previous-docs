@@ -8,7 +8,7 @@ FTL stands for Fluent Translation List. A FTL basically defines messages for a s
 
 ## FTL Syntax
 
-[See guide for FTL syntax.](https://github.com/projectfluent/fluent/tree/master/guide)
+[See guide for FTL syntax.](https://projectfluent.org/fluent/guide/)
 
 ## Working With FTL
 
