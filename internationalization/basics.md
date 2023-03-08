@@ -21,7 +21,7 @@ use std::sync::Arc;
 
 pub fn create() -> Arc<Ftl> {
     Arc::new({
-        let mut app_ftl = Ftl::new(
+        let app_ftl = Ftl::new(
             FtlOptions::new()
                 // specify supported locales.
                 // the form in which the locale identifier appears here
