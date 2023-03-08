@@ -34,7 +34,9 @@ pub fn create() -> Arc<Ftl> {
                 // })
                 .assets(FtlOptionsForAssets::new()
                     .source("app://res/lang")
-                    .files(vec!["_"])
+                    .files(vec![
+                        "_", // _.ftl
+                    ])
                     // "clean_unused" indicates whether to clean previous unused locale data. 
                     .clean_unused(true)
                     // specify FtlLoadMethod::FileSystem or FtlLoadMethod::Http
