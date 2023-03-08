@@ -58,7 +58,7 @@ Let's suppose `res/lang/en/_.ftl` contains this content:
 hello-world = Hello, world!
 ```
 
-The following code creates a `Ftl` using the above `create()` function, attempts to load the default locale, `"en"` and prints `"Hello, world!"` to the console:
+The following code creates a `Ftl` using the above `create()` function, attempts to load the default locale, `"en"`, and prints `"Hello, world!"` to the console:
 
 ```rust
 let mut app_ftl = crate::app_ftl::create();
@@ -73,6 +73,7 @@ Meaning of the arguments to `app_ftl.get_message_string`:
 - The first argument is the message identifier.
 - The second argument is an optional arguments map, which is `None` in this case.
 - The third argument is the destination of any errors while resolving the message.
+In this case we are ignoring any errors with a throwaway vector.
 
 ## Arguments
 
