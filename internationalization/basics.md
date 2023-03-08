@@ -25,7 +25,7 @@ pub fn create() -> Arc<Ftl> {
             FtlOptions::new()
                 // specify supported locales.
                 // the form in which the locale identifier appears here
-                // is a post-component for the assets "src" path. 
+                // is a post-component for the assets "source" path. 
                 // for example: "path/to/res/lang/en-US"
                 .supported_locales(vec!["en"])
                 .default_locale("en")
