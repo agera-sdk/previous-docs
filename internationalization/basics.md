@@ -12,7 +12,7 @@ FTL stands for Fluent Translation List. A FTL basically defines messages for a s
 
 ## Working With FTL
 
-The Rialight app contains a Rust module at the file `src/app_ftl.rs`, which looks like this:
+The Rialight app contains a Rust module at the file `src/ftl.rs`, which looks like this:
 
 ```rust
 use rialight::intl::ftl::{Ftl, FtlOptions, FtlOptionsForAssets, FtlLoadMethod};
@@ -21,7 +21,7 @@ use std::sync::Arc;
 
 pub fn create() -> Arc<Ftl> {
     Arc::new({
-        let app_ftl = Ftl::new(
+        let ftl = Ftl::new(
             FtlOptions::new()
                 // specify supported locales.
                 // the form in which the locale identifier appears here
@@ -42,10 +42,10 @@ pub fn create() -> Arc<Ftl> {
                     // specify FtlLoadMethod::FileSystem or FtlLoadMethod::Http
                     .load_method(FtlLoadMethod::FileSystem)))
         ;
-        app_ftl.initialize_locale(|_locale, _bundle| {
+        ftl.initialize_locale(|_locale, _bundle| {
             //
         });
-        app_ftl
+        ftl
     })
 }
 ```
@@ -63,14 +63,14 @@ hello-world = Hello, world!
 The following code creates a `Ftl` using the above `create()` function, attempts to load the default locale, `"en"`, and prints `"Hello, world!"` to the console:
 
 ```rust
-let app_ftl = app_ftl::create();
-if !app_ftl.load(None).await {
+let ftl = crate::ftl::create();
+if !ftl.load(None).await {
     return;
 }
-println!("{}", app_ftl.get_message("hello-world", None, &mut vec![]).unwrap());
+println!("{}", ftl.get_message("hello-world", None, &mut vec![]).unwrap());
 ```
 
-Meaning of the arguments to `app_ftl.get_message`:
+Meaning of the arguments to `ftl.get_message`:
 
 - The first argument is the message identifier.
 - The second argument is an optional arguments map, which is `None` in this case.
@@ -79,7 +79,7 @@ In this case we are ignoring any errors with a throwaway vector.
 
 ## Arguments
 
-Arguments maps for `app_ftl.get_message_string` can be literally created with the `arguments!` macro:
+Arguments maps for `ftl.get_message_string` can be literally created with the `arguments!` macro:
 
 ```rust
 use rialight::intl;
